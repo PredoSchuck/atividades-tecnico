@@ -1,0 +1,43 @@
+Instruções:
+--> "nº" etapa da atividade
+--> "?" significa uma linha de código, inserir na mongosh após "? - "
+--> "!" significa os resultados obtidos
+
+1º - criação de um banco de dados
+? - use uc4atividade5
+! - switched to db uc4atividade5
+
+
+2º - inclusão dos dados de nome, descricao, estoque, fabricante para a tabela “Produto”
+? - db.produto.insertOne({nome: "cidade", descricao: "infantil", estoque: 5, fabricante: "lego"})
+! - 
+acknowledged: true,
+insertedId: ObjectId('65c6a0a651620983c85ec62a')
+
+3º - Atualização de dados de produto (qualquer campo de sua preferência)
+? - db.produto.updateOne({"nome": "cidade"},{$set: {"nome": "fazenda"}})
+! - 
+acknowledged: true,
+insertedId: null,
+matchedCount: 1,
+modifiedCount: 1,
+upsertedCount: 0
+
+
+4º - Busca de produto por nome
+? - db.produto.find({"nome": "fazenda"})
+! -
+_id: ObjectId('65c6a0a651620983c85ec62a'),
+nome: 'fazenda',
+descricao: 'infantil',
+estoque: 5,
+fabricante: 'lego'
+
+5º - Busca de produto por fabricante
+? - db.produto.find({"fabricante": "lego"})
+! - 
+_id: ObjectId('65c6a0a651620983c85ec62a'),
+nome: 'fazenda',
+descricao: 'infantil',
+estoque: 5,
+fabricante: 'lego'

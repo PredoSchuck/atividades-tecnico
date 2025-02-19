@@ -1,0 +1,1 @@
+Por meio do MySQL, aprender o básico sobre banco de dados, como fazer um diagrama ER e scripts.
